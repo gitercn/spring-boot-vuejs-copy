@@ -6,6 +6,18 @@
     <h3>{{ postsa }}</h3>
 
     <button class=”Search__button” @click="callRestServiceb()">Button B</button>
+    <br>
+    roomid    : 
+    <br>
+    <input v-model="room.roomid"> 
+    <br>
+    {{ room.roomid }}
+    <br>
+    roomdetail: 
+    <br>
+    <input v-model="room.roomdetail"> 
+    <br>
+    {{ room.roomdetail }}
 
     <h3>{{ postsb }}</h3>
 
@@ -27,7 +39,11 @@ export default {
       postsa: [],
       postsb: [],
       postsc: [],
-      errors: []
+      errors: [],
+      room: {
+        roomid: "",
+        roomdetail: ""
+      }
     }
   },
   methods: {
@@ -43,7 +59,7 @@ export default {
         })
     },
     callRestServiceb () {
-      AXIOS.get(`api/hellob`)
+      AXIOS.post(`api/hellob`, this.room)
         .then(response => {
           // JSON responses are automatically parsed.
           this.postsb = response.data

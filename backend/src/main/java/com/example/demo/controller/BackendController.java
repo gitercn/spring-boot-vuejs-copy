@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,15 +38,19 @@ public class BackendController {
 	}
 
 	@RequestMapping("/hellob")
-	public String backendHellob() {
+	public String backendHellob(@RequestBody RoomVO roomVO) {
 		System.out.println("backendHello");
-		roomMapper.findByRoomId("001");
+		RoomVO roomVOb1 = new RoomVO();
+		roomVOb1.setRoomid(roomVO.getRoomid());
+		roomVOb1.setRoomdetail(roomVO.getRoomdetail());
+		roomMapper.insertRoom(roomVOb1);
 		return "backendHello b";
 	}
 	
 	@RequestMapping("/helloc")
 	public String backendHelloc() {
 		System.out.println("backendHello");
+		roomMapper.findByRoomId("001");
 		return "backendHello c";
 	}
 
