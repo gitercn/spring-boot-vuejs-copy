@@ -18,11 +18,21 @@
     <input v-model="room.roomdetail"> 
     <br>
     {{ room.roomdetail }}
-
     <h3>{{ postsb }}</h3>
 
     <button class=”Search__button” @click="callRestServicec()">Button C</button>
-
+    <br>
+    roomidc    : 
+    <br>
+    <input v-model="roomc.roomid"> 
+    <br>
+    {{ roomc.roomid }}
+    <br>
+    roomdetailc: 
+    <br>
+    <input v-model="roomc.roomdetail"> 
+    <br>
+    {{ roomc.roomdetail }}
     <h3>{{ postsc }}</h3>
 
   </div>
@@ -43,6 +53,10 @@ export default {
       room: {
         roomid: "",
         roomdetail: ""
+      },
+      roomc:{
+        roomid:"",
+        roomdetail:""
       }
     }
   },
@@ -69,7 +83,7 @@ export default {
         })
     },
     callRestServicec () {
-      AXIOS.get(`api/helloc`)
+      AXIOS.post(`api/helloc`, this.roomc)
         .then(response => {
           // JSON responses are automatically parsed.
           this.postsc = response.data

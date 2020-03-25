@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.RoomMapper" >
+
+    <resultMap id="BaseResultMap" type="com.example.demo.vo.RoomVO">
+        <result column="roomid" property="roomid" jdbcType="VARCHAR" />
+        <result column="roomdetail" property="roomdetail" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectByRoomid" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from room
+        where roomid = #{roomid}
+    </select>
+</mapper>

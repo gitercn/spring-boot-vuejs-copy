@@ -15,5 +15,7 @@ public interface RoomMapper {
 	  
 	  @Insert("INSERT INTO room (roomid, roomdetail) values (#{roomid}, #{roomdetail})")
 	  int insertRoom(RoomVO roomVO);
+	  
+	  RoomVO selectByRoomid(String roomid);
 
 }

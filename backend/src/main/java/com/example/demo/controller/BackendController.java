@@ -48,10 +48,12 @@ public class BackendController {
 	}
 	
 	@RequestMapping("/helloc")
-	public String backendHelloc() {
-		System.out.println("backendHello");
-		roomMapper.findByRoomId("001");
-		return "backendHello c";
+	public RoomVO backendHelloc(@RequestBody RoomVO roomVOc) {
+		System.out.println(roomVOc.getRoomid());
+		RoomVO roomVOc1 = new RoomVO();
+		roomVOc1 = roomMapper.selectByRoomid(roomVOc.getRoomid());
+		System.out.println(roomVOc1.getRoomdetail());
+		return roomVOc1;
 	}
 
 }
