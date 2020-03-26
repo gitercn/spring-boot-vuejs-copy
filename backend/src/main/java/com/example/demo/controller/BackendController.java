@@ -56,7 +56,7 @@ public class BackendController {
 		return roomVOc1;
 	}
 	
-	@RequestMapping("/insertRoomOnPage1")
+	@RequestMapping("/insertRoom")
 	public RoomVO insertRoomOnPage1(@RequestBody RoomVO roomOnPage1) {
 		System.out.println(roomOnPage1.getRoomid());
 		RoomVO roomVOc1 = new RoomVO();

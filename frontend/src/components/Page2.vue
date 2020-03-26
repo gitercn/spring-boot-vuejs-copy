@@ -1,54 +1,34 @@
 <template>
   <div class="page2">
     <h1>This is page 2</h1>
-    <!-- <br />
-    <button @click="jumpBack()">Jump Back</button>
-    <br />
-    <input v-model="roomOnPage2.roomid" />
+    <br />roomid:
     <br />
     {{ this.$store.state.roomOnPage2.roomid }}
     <br />roomdetail:
     <br />
-    <input v-model="roomOnPage2.roomdetail" />
-    <br />
     {{ this.$store.state.roomOnPage2.roomdetail }}
-    <button @click="changeRoomOnPage2">使用commit改值</button>
-    <page2popup>
-      <p>发布的内容</p>
-      <p>更多发布的内容</p>
-    </page2popup> -->
     <br />
     <button @click="openPage2Modal">Show Popup</button>
     <page2modal/>
+    <br />
+    <button @click="jumpBack()">Jump Back</button>
   </div>
 </template>
 <script>
-// import page2popup from "./page2popup.vue";
 import page2modal from "./page2modal.vue";
-// import VideoModal from './VideoModal';
 
 export default {
   // name: "page2",
   components:{
-    // page2popup,
     page2modal,
-    // VideoModal
   },
   data() {
     return {
-      roomOnPage2: {
-          roomid:"",
-          roomdetail:""
-      }
     };
   },
   methods: {
     jumpBack() {
       this.$router.push("/");
-    },
-
-    changeRoomOnPage2() {
-      this.$store.commit("mutationsChangeRoomOnPage2", this.roomOnPage2);
     },
 
     openPage2Modal(){
