@@ -9,7 +9,7 @@ export default new Vuex.Store({
   state: {
     stateName:'stateName1',
     // 上面stateName是参考资料中的例子，下面是自己的
-    roomOnPage1:{
+    roomOnPage2:{
       roomid:"",
       roomdetail:""
     }
@@ -19,8 +19,8 @@ export default new Vuex.Store({
     mutationsName (state, params){// 定义更改state的方法，可以传参，必须是同步函数
       state.stateName = params
     },
-    mutationsChangeRoomOnPage1(state, params){
-      state.roomOnPage1 = params
+    mutationsChangeRoomOnPage2(state, params){
+      state.roomOnPage2 = params
     }
   },
   // Action 提交的是 mutation，而不是直接变更状态。Action 可以包含任意异步操作。类似于vue的methods。可以在组件中使用this.$store.dispatch('actionName', 'xxx')分发

@@ -27,6 +27,8 @@
     <h3>{{ postsc }}</h3>
     <br />
     <button @click="jumpPage1()">Jump Page 1</button>
+    <br />
+    <button @click="jumpPage2()">Jump Page 2</button>
   </div>
 </template>
 
@@ -86,6 +88,9 @@ export default {
     },
     jumpPage1(){
       this.$router.push("/Page1")
+    },
+    jumpPage2(){
+      this.$router.push("/Page2")
     }
   }
 };
