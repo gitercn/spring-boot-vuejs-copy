@@ -1,50 +1,43 @@
 <template>
   <div class="service">
-
-    <button class=”Search__button” @click="callRestServicea()">Button A</button>
+    <button @click="callRestServicea()">Button A</button>
 
     <h3>{{ postsa }}</h3>
 
-    <button class=”Search__button” @click="callRestServiceb()">Button B</button>
-    <br>
-    roomid    : 
-    <br>
-    <input v-model="room.roomid"> 
-    <br>
+    <button @click="callRestServiceb()">Button B</button>
+    <br />roomid :
+    <br />
+    <input v-model="room.roomid" />
+    <br />
     {{ room.roomid }}
-    <br>
-    roomdetail: 
-    <br>
-    <input v-model="room.roomdetail"> 
-    <br>
+    <br />roomdetail:
+    <br />
+    <input v-model="room.roomdetail" />
+    <br />
     {{ room.roomdetail }}
     <h3>{{ postsb }}</h3>
 
-    <button class=”Search__button” @click="callRestServicec()">Button C</button>
-    <br>
-    roomidc    : 
-    <br>
-    <input v-model="roomc.roomid"> 
-    <br>
+    <button @click="callRestServicec()">Button C</button>
+    <br />roomidc :
+    <br />
+    <input v-model="roomc.roomid" />
+    <br />
     {{ roomc.roomid }}
-    <br>
-    roomdetailc: 
-    <br>
-    <input v-model="roomc.roomdetail"> 
-    <br>
+    <br />
     {{ roomc.roomdetail }}
     <h3>{{ postsc }}</h3>
-
+    <br />
+    <button @click="jumpPage1()">Jump Page 1</button>
   </div>
 </template>
 
 <script>
-import {AXIOS} from './backend-api'
+import { AXIOS } from "./backend-api";
 
 export default {
-  name: 'hello',
+  name: "hello",
 
-  data () {
+  data() {
     return {
       postsa: [],
       postsb: [],
@@ -54,47 +47,49 @@ export default {
         roomid: "",
         roomdetail: ""
       },
-      roomc:{
-        roomid:"",
-        roomdetail:""
+      roomc: {
+        roomid: "",
+        roomdetail: ""
       }
-    }
+    };
   },
   methods: {
     // Fetches posts when the component is created.
-    callRestServicea () {
+    callRestServicea() {
       AXIOS.get(`api/helloa`)
         .then(response => {
           // JSON responses are automatically parsed.
-          this.postsa = response.data
+          this.postsa = response.data;
         })
         .catch(e => {
-          this.errors.push(e)
-        })
+          this.errors.push(e);
+        });
     },
-    callRestServiceb () {
+    callRestServiceb() {
       AXIOS.post(`api/hellob`, this.room)
         .then(response => {
           // JSON responses are automatically parsed.
-          this.postsb = response.data
+          this.postsb = response.data;
         })
         .catch(e => {
-          this.errors.push(e)
-        })
+          this.errors.push(e);
+        });
     },
-    callRestServicec () {
+    callRestServicec() {
       AXIOS.post(`api/helloc`, this.roomc)
         .then(response => {
           // JSON responses are automatically parsed.
-          this.postsc = response.data
+          this.postsc = response.data;
         })
         .catch(e => {
-          this.errors.push(e)
-        })
+          this.errors.push(e);
+        });
+    },
+    jumpPage1(){
+      this.$router.push("/Page1")
     }
   }
-}
-
+};
 </script>
 
 
