@@ -1,7 +1,7 @@
 <template>
-  <div class="page2">
-    <h1>This is page 2</h1>
-    <!-- <br />
+  <div class="page2popup">
+    <!-- <h1>This is page 2 Popup</h1>
+    <br />
     <button @click="jumpBack()">Jump Back</button>
     <br />
     <input v-model="roomOnPage2.roomid" />
@@ -12,28 +12,16 @@
     <input v-model="roomOnPage2.roomdetail" />
     <br />
     {{ this.$store.state.roomOnPage2.roomdetail }}
-    <button @click="changeRoomOnPage2">使用commit改值</button>
-    <page2popup>
-      <p>发布的内容</p>
-      <p>更多发布的内容</p>
-    </page2popup> -->
-    <br />
-    <button @click="openPage2Modal">Show Popup</button>
-    <page2modal/>
+    <button @click="changeRoomOnPage2">使用commit改值</button> -->
+    <p>我是子组件</p>
+    <slot>
+        <p>如果父组件没有插件内容，我就默认显示 https://blog.csdn.net/qq_36407748/article/details/80150741</p>
+    </slot>
   </div>
 </template>
 <script>
-// import page2popup from "./page2popup.vue";
-import page2modal from "./page2modal.vue";
-// import VideoModal from './VideoModal';
-
 export default {
-  // name: "page2",
-  components:{
-    // page2popup,
-    page2modal,
-    // VideoModal
-  },
+  // name: "page2popup",
   data() {
     return {
       roomOnPage2: {
@@ -49,10 +37,6 @@ export default {
 
     changeRoomOnPage2() {
       this.$store.commit("mutationsChangeRoomOnPage2", this.roomOnPage2);
-    },
-
-    openPage2Modal(){
-      this.$modal.show('page2modal')
     }
   }
 };

@@ -1,0 +1,7 @@
+<template>
+  <modal name="page2modal">
+    <!-- 参考教程：https://blog.csdn.net/asing1elife/article/details/89248946 -->
+    <!-- https://github.com/Dream4ever/knowledge-base/issues/35 -->
+    This is Page 2 Popup
+  </modal>
+</template>
