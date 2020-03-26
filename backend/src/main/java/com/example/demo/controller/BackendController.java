@@ -55,5 +55,25 @@ public class BackendController {
 		System.out.println(roomVOc1.getRoomdetail());
 		return roomVOc1;
 	}
+	
+	@RequestMapping("/insertRoomOnPage1")
+	public RoomVO insertRoomOnPage1(@RequestBody RoomVO roomOnPage1) {
+		System.out.println(roomOnPage1.getRoomid());
+		RoomVO roomVOc1 = new RoomVO();
+		roomVOc1 = roomMapper.selectByRoomid(roomOnPage1.getRoomid());
+		if (roomVOc1 == null) {
+			RoomVO roomVOb1 = new RoomVO();
+			roomVOb1.setRoomid(roomOnPage1.getRoomid());
+			roomVOb1.setRoomdetail(roomOnPage1.getRoomdetail());
+			roomMapper.insertRoom(roomVOb1);
+		} else {
+			RoomVO roomVOb1 = new RoomVO();
+			roomVOb1.setRoomid(roomOnPage1.getRoomid());
+			roomVOb1.setRoomdetail(roomOnPage1.getRoomdetail());
+			roomMapper.updateRoom(roomVOb1);
+		}
+		roomVOc1 = roomMapper.selectByRoomid(roomOnPage1.getRoomid());
+		return roomVOc1;
+	}
 
 }

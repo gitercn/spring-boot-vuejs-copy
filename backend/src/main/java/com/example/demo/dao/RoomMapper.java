@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.RoomVO;
 
@@ -17,5 +18,8 @@ public interface RoomMapper {
 	  int insertRoom(RoomVO roomVO);
 	  
 	  RoomVO selectByRoomid(String roomid);
+	  
+	  @Update("UPDATE room set roomdetail = #{roomdetail} where roomid = #{roomid}")
+	  int updateRoom(RoomVO roomVO);
 
 }
