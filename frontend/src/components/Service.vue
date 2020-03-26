@@ -24,7 +24,6 @@
     <br />
     {{ roomc.roomid }}
     <br />
-    {{ roomc.roomdetail }}
     <h3>{{ postsc }}</h3>
     <br />
     <button @click="jumpPage1()">Jump Page 1</button>
