@@ -29,6 +29,8 @@
     <button @click="jumpPage1()">Jump Page 1</button>
     <br />
     <button @click="jumpPage2()">Jump Page 2</button>
+    <br />
+    <button @click="jumpPage3()">Jump Page 3</button>
   </div>
 </template>
 
@@ -91,6 +93,9 @@ export default {
     },
     jumpPage2(){
       this.$router.push("/Page2")
+    },
+    jumpPage3(){
+      this.$router.push("/Page3")
     }
   }
 };
