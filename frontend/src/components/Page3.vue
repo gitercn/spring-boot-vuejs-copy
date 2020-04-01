@@ -8,7 +8,7 @@
     <br />
     {{ this.$store.state.roomOnPage2.roomdetail }}
     <br />
-    <button @click="openPage2Modal">Show Popup</button>
+    <v-btn @click="openPage2Modal">Show Popup</v-btn>
     <page2modal/>
 
     <br />
@@ -19,7 +19,7 @@
     <v-date-picker v-model="picker"></v-date-picker>
     </v-row>
     <br />
-    <button @click="jumpBack()">Jump Back</button>
+    <v-btn @click="jumpBack()">Jump Back</v-btn>
   </div>
 </template>
 <script>

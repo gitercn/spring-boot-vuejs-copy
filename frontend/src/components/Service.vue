@@ -1,36 +1,36 @@
 <template>
   <div class="service">
-    <button @click="callRestServicea()">Button A</button>
+    <v-btn @click="callRestServicea()">Button A</v-btn>
 
     <h3>{{ postsa }}</h3>
 
-    <button @click="callRestServiceb()">Button B</button>
+    <v-btn @click="callRestServiceb()">Button B</v-btn>
     <br />roomid :
     <br />
-    <input v-model="room.roomid" />
+    <v-text-field v-model="room.roomid" />
     <br />
     {{ room.roomid }}
     <br />roomdetail:
     <br />
-    <input v-model="room.roomdetail" />
+    <v-text-field v-model="room.roomdetail" />
     <br />
     {{ room.roomdetail }}
     <h3>{{ postsb }}</h3>
 
-    <button @click="callRestServicec()">Button C</button>
+    <v-btn @click="callRestServicec()">Button C</v-btn>
     <br />roomidc :
     <br />
-    <input v-model="roomc.roomid" />
+    <v-text-field v-model="roomc.roomid" />
     <br />
     {{ roomc.roomid }}
     <br />
     <h3>{{ postsc }}</h3>
     <br />
-    <button @click="jumpPage1()">Jump Page 1</button>
+    <v-btn @click="jumpPage1()">Jump Page 1</v-btn>
     <br />
-    <button @click="jumpPage2()">Jump Page 2</button>
+    <v-btn @click="jumpPage2()">Jump Page 2</v-btn>
     <br />
-    <button @click="jumpPage3()">Jump Page 3</button>
+    <v-btn @click="jumpPage3()">Jump Page 3</v-btn>
   </div>
 </template>
 
