@@ -9,9 +9,9 @@
     <br />roomdetail:<br />
     <input v-model="roomOnPage2.roomdetail" />
     <br />
-    <button @click="changeRoomOnPage2">Update Room On Page2</button>
+    <v-btn @click="changeRoomOnPage2">Update Room On Page2</v-btn>
     <br />
-    <button @click="insertRoomOnPage2">Update to Database</button>
+    <v-btn @click="insertRoomOnPage2">Update to Database</v-btn>
     <h3>{{ responseData }}</h3>
   </modal>
 </template>
