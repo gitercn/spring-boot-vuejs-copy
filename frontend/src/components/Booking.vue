@@ -1,12 +1,12 @@
 <template>
   <v-container>
     <v-card>
-      <v-row>
-        <v-col>
+      <v-row class="pa-2">
+        <v-col cols="12" md="6">
           <div>Room Number</div>
           <div>101</div>
         </v-col>
-        <v-col>
+        <v-col cols="12" md="2">
           <div>Book Time</div>
           <div>2020-04-01 8:00-17:00</div>
         </v-col>
