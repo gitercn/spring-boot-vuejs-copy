@@ -40,22 +40,25 @@
     <!-- <v-content>
       <HelloWorld/>
     </v-content>-->
+    <Navbar/>
     <v-content>
-      <v-container fluid>
+
         <router-view />
-      </v-container>
+
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld";
+import Navbar from "@/components/Navbar"; // @指代src文件夹
 
 export default {
   name: "App",
 
   components: {
-    HelloWorld
+    HelloWorld,
+    Navbar
   },
 
   data: () => ({

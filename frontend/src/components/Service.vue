@@ -1,36 +1,47 @@
 <template>
   <div class="service">
-    <v-btn @click="callRestServicea()">Button A</v-btn>
+    <v-container fluid>
+      <v-row>
+        <v-col cols="12" md="6" lg="3">
+          <v-btn block>1</v-btn>
+        </v-col>
+        <v-col cols="12" md="6" lg="3">
+          <v-btn block>1</v-btn>
+        </v-col>
+      </v-row>
 
-    <h3>{{ postsa }}</h3>
+      <v-btn @click="callRestServicea()">Button A</v-btn>
 
-    <v-btn @click="callRestServiceb()">Button B</v-btn>
-    <br />roomid :
-    <br />
-    <v-text-field v-model="room.roomid" />
-    <br />
-    {{ room.roomid }}
-    <br />roomdetail:
-    <br />
-    <v-text-field v-model="room.roomdetail" />
-    <br />
-    {{ room.roomdetail }}
-    <h3>{{ postsb }}</h3>
+      <h3>{{ postsa }}</h3>
 
-    <v-btn @click="callRestServicec()">Button C</v-btn>
-    <br />roomidc :
-    <br />
-    <v-text-field v-model="roomc.roomid" />
-    <br />
-    {{ roomc.roomid }}
-    <br />
-    <h3>{{ postsc }}</h3>
-    <br />
-    <v-btn @click="jumpPage1()">Jump Page 1</v-btn>
-    <br />
-    <v-btn @click="jumpPage2()">Jump Page 2</v-btn>
-    <br />
-    <v-btn @click="jumpPage3()">Jump Page 3</v-btn>
+      <v-btn @click="callRestServiceb()">Button B</v-btn>
+      <br />roomid :
+      <br />
+      <v-text-field v-model="room.roomid" />
+      <br />
+      {{ room.roomid }}
+      <br />roomdetail:
+      <br />
+      <v-text-field v-model="room.roomdetail" />
+      <br />
+      {{ room.roomdetail }}
+      <h3>{{ postsb }}</h3>
+
+      <v-btn @click="callRestServicec()">Button C</v-btn>
+      <br />roomidc :
+      <br />
+      <v-text-field v-model="roomc.roomid" />
+      <br />
+      {{ roomc.roomid }}
+      <br />
+      <h3>{{ postsc }}</h3>
+      <br />
+      <v-btn @click="jumpPage1()">Jump Page 1</v-btn>
+      <br />
+      <v-btn @click="jumpPage2()">Jump Page 2</v-btn>
+      <br />
+      <v-btn @click="jumpPage3()">Jump Page 3</v-btn>
+    </v-container>
   </div>
 </template>
 
@@ -88,14 +99,14 @@ export default {
           this.errors.push(e);
         });
     },
-    jumpPage1(){
-      this.$router.push("/Page1")
+    jumpPage1() {
+      this.$router.push("/Page1");
     },
-    jumpPage2(){
-      this.$router.push("/Page2")
+    jumpPage2() {
+      this.$router.push("/Page2");
     },
-    jumpPage3(){
-      this.$router.push("/Page3")
+    jumpPage3() {
+      this.$router.push("/Page3");
     }
   }
 };
