@@ -4,7 +4,7 @@
         <!-- <v-app-bar-title>
             Title
         </v-app-bar-title> -->
-        <v-btn @click="drawer = !drawer">Menu</v-btn>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <v-toolbar-title>
             Room Booking
         </v-toolbar-title>
