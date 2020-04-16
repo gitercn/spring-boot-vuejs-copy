@@ -35,7 +35,7 @@ export default {
       drawer: false,
       links: [
         { icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/' },
-        { icon: 'mdi-book', text: 'Booking', route: '/booking' },
+        { icon: 'mdi-book', text: 'Booking', route: '/Booking' },
         { icon: 'mdi-account', text: 'Account', route: '/account' },
         { icon: 'mdi-account', text: 'Account1', route: '/Page1' },
         { icon: 'mdi-account', text: 'Account2', route: '/Page2' },
