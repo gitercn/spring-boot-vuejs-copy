@@ -1,12 +1,16 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dao.MeetingroomMapper;
 import com.example.demo.dao.RoomMapper;
+import com.example.demo.vo.MeetingroomVO;
 import com.example.demo.vo.RoomVO;
 
 @RestController()
@@ -15,6 +19,8 @@ public class BackendController {
 	
 	@Autowired
 	private RoomMapper roomMapper;
+	@Autowired
+	private MeetingroomMapper meetingroomMapper;
 	
 	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/helloa")
@@ -74,6 +80,11 @@ public class BackendController {
 		}
 		roomVOc1 = roomMapper.selectByRoomid(roomOnPage1.getRoomid());
 		return roomVOc1;
+	}
+	
+	@RequestMapping("/getAllRoom")
+	public List<MeetingroomVO> getAllRoom() {
+		return meetingroomMapper.selectAllRoom();
 	}
 
 }
