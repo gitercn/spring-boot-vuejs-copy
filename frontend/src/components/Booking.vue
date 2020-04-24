@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-card>
-      <v-row class="pa-2" v-for="item in responseData" :key="item.meetingroomid">
+    <v-card class="ma-3 pa-2" v-for="item in responseData" :key="item.meetingroomid">
+      <v-row>
         <v-col cols="12" md="6">
           <div>Room Number</div>
           <div>{{ item.meetingroomid }}</div>
@@ -18,6 +18,9 @@
           <div>User</div>
           <div>{{ item.creater }}</div>
         </v-col>
+      </v-row>
+      <v-row cols="12">
+      <v-divider dark></v-divider>
       </v-row>
     </v-card>
   </v-container>
