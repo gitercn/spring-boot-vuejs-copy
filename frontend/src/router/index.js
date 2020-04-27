@@ -6,7 +6,8 @@ import Service from '../components/Service.vue'
 import Page1 from '../components/Page1.vue'
 import Page2 from '../components/Page2.vue'
 import Page3 from '../components/Page3.vue'
-import Booking from '../components/Booking.vue'
+// import Booking from '../components/Booking.vue'
+import Room from '../components/Room.vue'
 
 Vue.use(VueRouter)
 
@@ -45,9 +46,9 @@ const routes = [
     component: Page3
   },
   {
-    path: '/Booking',
-    name: 'Booking',
-    component: Booking
+    path: '/Room',
+    name: 'Room',
+    component: Room
   },
   // {
   //   path: '/hello1',

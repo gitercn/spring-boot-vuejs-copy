@@ -86,5 +86,14 @@ public class BackendController {
 	public List<MeetingroomVO> getAllRoom() {
 		return meetingroomMapper.selectAllRoom();
 	}
+	
+	@RequestMapping("/insertRoomToMeetingroominfo")
+	public String insertRoomToMeetingroominfo(@RequestBody MeetingroomVO roomOnPage1) {
+		
+
+		meetingroomMapper.insertRoom(roomOnPage1);
+			
+		return "success";
+	}
 
 }
