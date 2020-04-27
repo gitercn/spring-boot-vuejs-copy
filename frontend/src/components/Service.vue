@@ -2,15 +2,18 @@
   <div class="service">
     <v-container fluid>
       <v-row>
-        <v-col cols="12" md="6" lg="3">
-          <v-btn block>1</v-btn>
+        <v-col cols="12" md="3" lg="3">
+          <v-btn block @click="jumpPage1()">Room</v-btn>
         </v-col>
-        <v-col cols="12" md="6" lg="3">
-          <v-btn block>1</v-btn>
+        <v-col cols="12" md="3" lg="3">
+          <v-btn block @click="jumpPage2()">Booking</v-btn>
+        </v-col>
+        <v-col cols="12" md="3" lg="3">
+          <v-btn block @click="jumpPage2()">User</v-btn>
         </v-col>
       </v-row>
 
-      <v-btn @click="callRestServicea()">Button A</v-btn>
+      <!-- <v-btn @click="callRestServicea()">Button A</v-btn>
 
       <h3>{{ postsa }}</h3>
 
@@ -36,11 +39,11 @@
       <br />
       <h3>{{ postsc }}</h3>
       <br />
-      <v-btn @click="jumpPage1()">Jump Page 1</v-btn>
+      <v-btn @click="jumpPage1()">Room</v-btn>
       <br />
-      <v-btn @click="jumpPage2()">Jump Page 2</v-btn>
+      <v-btn @click="jumpPage2()">Booking</v-btn>
       <br />
-      <v-btn @click="jumpPage3()">Jump Page 3</v-btn>
+      <v-btn @click="jumpPage3()">User</v-btn> -->
     </v-container>
   </div>
 </template>
@@ -100,13 +103,13 @@ export default {
         });
     },
     jumpPage1() {
-      this.$router.push("/Page1");
+      this.$router.push("/Room");
     },
     jumpPage2() {
-      this.$router.push("/Page2");
+      this.$router.push("/Booking");
     },
     jumpPage3() {
-      this.$router.push("/Page3");
+      this.$router.push("/User");
     }
   }
 };
