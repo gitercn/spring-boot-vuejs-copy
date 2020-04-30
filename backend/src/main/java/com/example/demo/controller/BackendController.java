@@ -16,12 +16,12 @@ import com.example.demo.vo.RoomVO;
 @RestController()
 @RequestMapping("/api")
 public class BackendController {
-	
+
 	@Autowired
 	private RoomMapper roomMapper;
 	@Autowired
 	private MeetingroomMapper meetingroomMapper;
-	
+
 	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/helloa")
 	public String backendHelloa() {
@@ -30,12 +30,12 @@ public class BackendController {
 		roomVO1.setRoomid("001");
 		roomVO1.setRoomdetail("INUSE");
 		roomMapper.insertRoom(roomVO1);
-		
+
 		RoomVO roomVO2 = new RoomVO();
 		roomVO2.setRoomid("002");
 		roomVO2.setRoomdetail("EMPTY");
 		roomMapper.insertRoom(roomVO2);
-		
+
 		RoomVO roomVO3 = new RoomVO();
 		roomVO3.setRoomid("003");
 		roomVO3.setRoomdetail("INUSE");
@@ -52,7 +52,7 @@ public class BackendController {
 		roomMapper.insertRoom(roomVOb1);
 		return "backendHello b";
 	}
-	
+
 	@RequestMapping("/helloc")
 	public RoomVO backendHelloc(@RequestBody RoomVO roomVOc) {
 		System.out.println(roomVOc.getRoomid());
@@ -61,7 +61,7 @@ public class BackendController {
 		System.out.println(roomVOc1.getRoomdetail());
 		return roomVOc1;
 	}
-	
+
 	@RequestMapping("/insertRoom")
 	public RoomVO insertRoomOnPage1(@RequestBody RoomVO roomOnPage1) {
 		System.out.println(roomOnPage1.getRoomid());
@@ -81,18 +81,25 @@ public class BackendController {
 		roomVOc1 = roomMapper.selectByRoomid(roomOnPage1.getRoomid());
 		return roomVOc1;
 	}
-	
+
 	@RequestMapping("/getAllRoom")
 	public List<MeetingroomVO> getAllRoom() {
 		return meetingroomMapper.selectAllRoom();
 	}
-	
-	@RequestMapping("/insertRoomToMeetingroominfo")
-	public String insertRoomToMeetingroominfo(@RequestBody MeetingroomVO roomOnPage1) {
-		
 
-		meetingroomMapper.insertRoom(roomOnPage1);
-			
+	@RequestMapping("/insertMeetingroom")
+	public String insertMeetingroom(@RequestBody MeetingroomVO insertMeetingroomVO) {
+
+		meetingroomMapper.insertRoom(insertMeetingroomVO);
+
+		return "success";
+	}
+
+	@RequestMapping("/deleteMeetingroom")
+	public String deleteMeetingroom(@RequestBody MeetingroomVO deleteMeetingroomVO) {
+		
+		meetingroomMapper.deleteMeetingroom(deleteMeetingroomVO);
+		
 		return "success";
 	}
 

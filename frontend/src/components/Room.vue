@@ -1,14 +1,13 @@
 <template>
   <v-container>
     <v-row class="ma-3">
-      <RoomAddRoomPopup/>
-      <!-- <v-btn>
-        Add Room
-      </v-btn> -->
-
+      <RoomAddRoomPopup />
+      <v-btn color="primary" class="mx-2" @click="vcardactions = !vcardactions">Edit/Delete Room</v-btn>
     </v-row>
 
-    <v-card class="ma-3 pa-2" v-for="item in responseData" :key="item.meetingroomid">
+    
+
+    <v-card class="ma-3 pa-2" v-for="item in responseData" :key="item.meetingroomkey">
       <v-row>
         <v-col cols="12" md="1">
           <div>Room Key</div>
@@ -29,7 +28,7 @@
         <v-col cols="12" md="2">
           <div>End Time</div>
           <div>{{ item.endtm }}</div>
-        </v-col> -->
+        </v-col>-->
         <v-col>
           <div>Topic</div>
           <div>{{ item.topic }}</div>
@@ -42,6 +41,10 @@
       <v-row cols="12">
         <v-divider dark></v-divider>
       </v-row>
+      <v-card-actions v-if="vcardactions">
+        <v-btn color="primary">Edit Room</v-btn>
+        <v-btn color="primary" @click="deletemeetingroom({meetingroomkey : item.meetingroomkey})">Delete Room</v-btn>
+      </v-card-actions>
     </v-card>
   </v-container>
 </template>
@@ -57,7 +60,8 @@ export default {
   data() {
     return {
       projects: [],
-      responseData: []
+      responseData: [],
+      vcardactions: false
     };
   },
   created() {
@@ -71,6 +75,20 @@ export default {
       .catch(e => {
         this.errors.push(e);
       });
+  },
+  methods: {
+    deletemeetingroom(deleteMeetingroomVO){
+      AXIOS.post(`api/deleteMeetingroom`, deleteMeetingroomVO)
+      .then(response => {
+        // JSON responses are automatically parsed.
+        this.responseData = response.data;
+        console.log(this.responseData);
+        this.$router.go(0);
+      })
+      .catch(e => {
+        this.errors.push(e);
+      });
+    }
   }
 };
 </script>

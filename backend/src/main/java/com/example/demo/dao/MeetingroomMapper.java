@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -22,5 +23,8 @@ public interface MeetingroomMapper {
 
 	@Insert("INSERT INTO meetingroominfo (meetingroomkey, meetingroomid, capacity, starttm, endtm, topic, updatetm, createtm) values (#{meetingroomkey}, #{meetingroomid}, #{capacity}, #{starttm}, #{endtm}, #{topic}, #{updatetm}, #{createtm})")
 	void insertRoom(MeetingroomVO roomOnPage1);
+
+	@Delete("DELETE FROM meetingroominfo where meetingroomkey = #{meetingroomkey}")
+	void deleteMeetingroom(MeetingroomVO deleteMeetingroomVO);
 
 }

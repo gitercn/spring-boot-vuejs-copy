@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     addRoom() {
-      AXIOS.post(`api/insertRoomToMeetingroominfo`, this.room)
+      AXIOS.post(`api/insertMeetingroom`, this.room)
         .then(response => {
           // JSON responses are automatically parsed.
           this.responseData = response.data;
