@@ -42,8 +42,9 @@
         <v-divider dark></v-divider>
       </v-row>
       <v-card-actions v-if="vcardactions">
-        <v-btn color="primary">Edit Room</v-btn>
-        <v-btn color="primary" @click="deletemeetingroom({meetingroomkey : item.meetingroomkey})">Delete Room</v-btn>
+        <RoomEditRoomPopup v-bind:meetingroomitem = "item" />
+        <!-- <v-btn color="primary" class="ml-2">Edit Room</v-btn> -->
+        <v-btn color="primary" class="ml-2" @click="deletemeetingroom({meetingroomkey : item.meetingroomkey})">Delete Room</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
@@ -52,10 +53,12 @@
 <script>
 import { AXIOS } from "./backend-api";
 import RoomAddRoomPopup from "./RoomAddRoomPopup";
+import RoomEditRoomPopup from "./RoomEditRoomPopup";
 
 export default {
   components: {
-    RoomAddRoomPopup
+    RoomAddRoomPopup,
+    RoomEditRoomPopup
   },
   data() {
     return {

@@ -102,5 +102,14 @@ public class BackendController {
 		
 		return "success";
 	}
+	
+	@RequestMapping("/updateMeetingroom")
+	public String updateMeetingroom(@RequestBody MeetingroomVO deleteMeetingroomVO) {
+		
+		meetingroomMapper.updateMeetingroom(deleteMeetingroomVO);
+		
+		return "success";
+	}
+
 
 }
