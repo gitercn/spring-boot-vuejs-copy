@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="ma-3">
       <RoomAddRoomPopup />
-      <v-btn color="primary" class="mx-2" @click="vcardactions = !vcardactions">Edit/Delete Room</v-btn>
+      <v-btn color="primary" class="mx-2" @click="vcardactions = !vcardactions" v-bind:outlined="vcardactions">Edit/Delete Room</v-btn>
     </v-row>
 
     
@@ -44,7 +44,7 @@
       <v-card-actions v-if="vcardactions">
         <RoomEditRoomPopup v-bind:meetingroomitem = "item" />
         <!-- <v-btn color="primary" class="ml-2">Edit Room</v-btn> -->
-        <v-btn color="primary" class="ml-2" @click="deletemeetingroom({meetingroomkey : item.meetingroomkey})">Delete Room</v-btn>
+        <v-btn color="error" class="ml-2" @click="deletemeetingroom({meetingroomkey : item.meetingroomkey})">Delete Room</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
@@ -91,6 +91,9 @@ export default {
       .catch(e => {
         this.errors.push(e);
       });
+    },
+    editdeletebutton(){
+      this.vcardactions = !this.vcardactions;
     }
   }
 };
