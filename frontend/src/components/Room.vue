@@ -21,14 +21,14 @@
           <div>Capacity</div>
           <div>{{ item.capacity }}</div>
         </v-col>
-        <!-- <v-col cols="12" md="2">
+        <v-col cols="12" md="2">
           <div>Start Time</div>
-          <div>{{ item.starttm }}</div>
+          <div>{{ item.starttm | moment("YYYY-M-D HH:mm") }}</div>
         </v-col>
         <v-col cols="12" md="2">
           <div>End Time</div>
-          <div>{{ item.endtm }}</div>
-        </v-col>-->
+          <div>{{ item.endtm | moment("YYYY-M-D HH:mm") }}</div>
+        </v-col>
         <v-col>
           <div>Topic</div>
           <div>{{ item.topic }}</div>
@@ -71,7 +71,6 @@ export default {
     AXIOS.post(`api/getAllRoom`)
       .then(response => {
         // JSON responses are automatically parsed.
-        console.log(response.data);
         this.responseData = response.data;
         console.log(this.responseData);
       })

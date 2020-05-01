@@ -1,5 +1,6 @@
 package com.example.demo.vo;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class MeetingroomVO {
@@ -7,12 +8,12 @@ public class MeetingroomVO {
 	private String meetingroomkey;
 	private String meetingroomid;
 	private String capacity;
-	private Date starttm;
-	private Date endtm;
+	private Timestamp starttm;
+	private Timestamp endtm;
 	private String creater;
 	private String topic;
-	private Date updatetm;
-	private Date createtm;
+	private Timestamp updatetm;
+	private Timestamp createtm;
 	public String getMeetingroomkey() {
 		return meetingroomkey;
 	}
@@ -34,13 +35,13 @@ public class MeetingroomVO {
 	public Date getStarttm() {
 		return starttm;
 	}
-	public void setStarttm(Date starttm) {
+	public void setStarttm(Timestamp starttm) {
 		this.starttm = starttm;
 	}
 	public Date getEndtm() {
 		return endtm;
 	}
-	public void setEndtm(Date endtm) {
+	public void setEndtm(Timestamp endtm) {
 		this.endtm = endtm;
 	}
 	public String getCreater() {
@@ -58,13 +59,13 @@ public class MeetingroomVO {
 	public Date getUpdatetm() {
 		return updatetm;
 	}
-	public void setUpdatetm(Date updatetm) {
+	public void setUpdatetm(Timestamp updatetm) {
 		this.updatetm = updatetm;
 	}
 	public Date getCreatetm() {
 		return createtm;
 	}
-	public void setCreatetm(Date createtm) {
+	public void setCreatetm(Timestamp createtm) {
 		this.createtm = createtm;
 	}
 

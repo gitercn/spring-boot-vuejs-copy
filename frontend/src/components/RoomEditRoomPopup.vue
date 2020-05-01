@@ -11,8 +11,22 @@
           <v-text-field v-model="meetingroomitem.meetingroomkey" label="Room Key"></v-text-field>
           <v-text-field v-model="meetingroomitem.meetingroomid" label="Room ID"></v-text-field>
           <v-text-field v-model="meetingroomitem.capacity" label="Capacity"></v-text-field>
-          <!-- <v-text-field v-model="room.starttm" label="Start Time"></v-text-field>
-          <v-text-field v-model="room.endtm" label="End Time"></v-text-field> -->
+          <v-datetime-picker label="Select Starttime" v-model="meetingroomitem.starttm  ">
+            <template slot="dateIcon">
+              <v-icon>mdi-calendar-outline</v-icon>
+            </template>
+            <template slot="timeIcon">
+              <v-icon>mdi-clock-outline</v-icon>
+            </template>
+          </v-datetime-picker>
+          <v-datetime-picker label="Select Endtime" v-model="meetingroomitem.endtm">
+            <template slot="dateIcon">
+              <v-icon>mdi-calendar-outline</v-icon>
+            </template>
+            <template slot="timeIcon">
+              <v-icon>mdi-clock-outline</v-icon>
+            </template>
+          </v-datetime-picker>
           <v-textarea v-model="meetingroomitem.topic" label="Topic"></v-textarea>
           <v-btn @click="editRoom">Edit</v-btn>
           {{responseData}}
@@ -34,22 +48,24 @@ export default {
   data() {
     return {
       dialog: false,
-      room: { meetingroomkey: "", meetingroomid: "", capacity: "", starttm: "", endtm: "", topic: "", updatetm: "", createtm: "" },
       responseData: ""
     };
   },
   methods: {
     editRoom() {
-      AXIOS.post(`api/updateMeetingroom`, this.meetingroomitem)
-        .then(response => {
-          // JSON responses are automatically parsed.
-          this.responseData = response.data;
-          this.dialog = false;
-          this.$router.go(0);
-        })
-        .catch(e => {
-          this.errors.push(e);
-        });
+      console.log(this.meetingroomitem.starttm);
+      console.log(typeof(this.meetingroomitem.starttm));
+      // this.meetingroomitem.updatetm = new Date();
+      // AXIOS.post(`api/updateMeetingroom`, this.meetingroomitem)
+      //   .then(response => {
+      //     // JSON responses are automatically parsed.
+      //     this.responseData = response.data;
+      //     this.dialog = false;
+      //     this.$router.go(0);
+      //   })
+      //   .catch(e => {
+      //     this.errors.push(e);
+      //   });
     }
   }
 };
