@@ -13,6 +13,7 @@
           <v-text-field v-model="room.capacity" label="Capacity"></v-text-field>
           <!-- <v-text-field v-model="room.starttm" label="Start Time"></v-text-field>
           <v-text-field v-model="room.endtm" label="End Time"></v-text-field> -->
+          <VueCtkDateTimePicker v-model="room.starttm" />
           <v-textarea v-model="room.topic" label="Topic"></v-textarea>
           <v-btn @click="addRoom">Add</v-btn>
           {{responseData}}
@@ -29,7 +30,7 @@ export default {
   data() {
     return {
       dialog: false,
-      room: { meetingroomkey: "", meetingroomid: "", capacity: "", starttm: "", endtm: "", topic: "", updatetm: "", createtm: "" },
+      room: { meetingroomkey: "", meetingroomid: "", capacity: "", starttm: null, endtm: "", topic: "", updatetm: "", createtm: "" },
       responseData: ""
     };
   },
