@@ -30,10 +30,42 @@ nvm install 12.16.3
 nvm use 12.16.3
 ```
 
+# 运行项目
+
+数据库导入  
+用DBeaver把 ./database文件夹下最新的数据库文件导入
+
+启动后台  
+用Eclipse打开 ./backend文件夹，启动后台
+
+启动前台  
+用vscode打开 ./frontend文件夹，运行 npm run serve 启动前台
 
 
+# 项目搭建
 
+目录结构：
 
+```
+spring-boot-vuejs-copy
+├─┬ backend     → Spring Boot 后台
+│ ├── src
+│ └── pom.xml
+├─┬ frontend    → Vue.js 前台
+│ ├── src
+│ └── pom.xml
+├── database    → 数据库备份
+└── pom.xml     → 管理整个项目的Maven文件
+```
+
+## 后台搭建
+在 https://start.spring.io/ 获取一个Spring Boot的空工程
+
+## 前台搭建
+运行`npm install -g @vue/cli` 安装@vue/cli到全局
+使用 `vue create frontend --no-git` 创建一个vue项目，使用--no-git的原因是整个项目已经是git项目，不用再新建为git项目，创建vue项目的时候注意添加router插件
+
+# 其他配置
 
 UI界面替换为 Vuetify, 参考教程： https://github.com/iamshaunjp/vuetify-playlist  
 
