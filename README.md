@@ -35,11 +35,11 @@ nvm use 12.16.3
 数据库导入  
 用DBeaver把 ./database文件夹下最新的数据库文件导入
 
-启动后台  
-用Eclipse打开 ./backend文件夹，启动后台
-
 启动前台  
-用vscode打开 ./frontend文件夹，运行 npm run serve 启动前台
+用vscode打开 ./frontend文件夹，运行 npm run serve 启动前台，浏览器通过 http://localhost:8080/ 访问前台页面
+
+启动后台  
+用Eclipse打开 ./backend文件夹，启动后台，后台服务在8098端口
 
 
 # 项目搭建
