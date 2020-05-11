@@ -1,22 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 // import Hello1 from '../views/Hello1.vue'
 import Service from '../components/Service.vue'
-import Page1 from '../components/Page1.vue'
-import Page2 from '../components/Page2.vue'
-import Page3 from '../components/Page3.vue'
 // import Booking from '../components/Booking.vue'
 import Room from '../components/Room.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home
-  },
   {
     path: '/about',
     name: 'About',
@@ -29,21 +20,6 @@ const routes = [
     path: '/',
     name: 'Service',
     component: Service
-  },
-  {
-    path: '/Page1',
-    name: 'Page1',
-    component: Page1
-  },
-  {
-    path: '/Page2',
-    name: 'Page2',
-    component: Page2
-  },
-  {
-    path: '/Page3',
-    name: 'Page3',
-    component: Page3
   },
   {
     path: '/Room',
