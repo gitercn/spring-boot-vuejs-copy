@@ -61,6 +61,7 @@ export default {
     addRoom() {
       console.log(this.room);
       console.log(typeof(this.room.starttm));
+      console.log(this.room.starttm instanceof Date);
       AXIOS.post(`api/insertMeetingroom`, this.room)
         .then(response => {
           // JSON responses are automatically parsed.

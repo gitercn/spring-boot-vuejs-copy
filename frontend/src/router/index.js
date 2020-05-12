@@ -26,11 +26,6 @@ const routes = [
     name: 'Room',
     component: Room
   },
-  // {
-  //   path: '/hello1',
-  //   name: 'Hello1',
-  //   component: Hello1
-  // },
 ]
 
 const router = new VueRouter({

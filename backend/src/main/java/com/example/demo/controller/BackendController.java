@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,9 @@ public class BackendController {
 
 	@RequestMapping("/getAllRoom")
 	public List<MeetingroomVO> getAllRoom() {
-		return meetingroomMapper.selectAllRoom();
+		List<MeetingroomVO> allrooms = new ArrayList<MeetingroomVO>();
+		allrooms = meetingroomMapper.selectAllRoom();
+		return allrooms;
 	}
 
 	@RequestMapping("/insertMeetingroom")
@@ -64,9 +67,9 @@ public class BackendController {
 	}
 	
 	@RequestMapping("/updateMeetingroom")
-	public String updateMeetingroom(@RequestBody MeetingroomVO deleteMeetingroomVO) {
+	public String updateMeetingroom(@RequestBody MeetingroomVO updateMeetingroomVO) {
 		
-		meetingroomMapper.updateMeetingroom(deleteMeetingroomVO);
+		meetingroomMapper.updateMeetingroom(updateMeetingroomVO);
 		
 		return "success";
 	}
